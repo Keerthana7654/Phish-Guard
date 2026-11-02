@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>PhishGuard — Warning</title>
+  <link rel="stylesheet" href="warning.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="card">
+      <div class="header">
+        <span class="badge" id="badge">LOADING</span>
+        <span class="score" id="scoreText"></span>
+      </div>
+      <h1 id="heading">Checking this link…</h1>
+      <p class="url" id="urlText"></p>
+      <ul class="reasons" id="reasonsList"></ul>
+      <div class="actions">
+        <button class="btn btn-secondary" id="backBtn">Go Back</button>
+        <button class="btn btn-danger" id="continueBtn">Continue Anyway</button>
+      </div>
+      <label class="remember">
+        <input type="checkbox" id="rememberCheckbox" />
+        Don't warn me about this domain again
+      </label>
+      <p class="footnote">
+        This page was shown automatically by PhishGuard before the destination
+        loaded — you don't need to open the extension for this to work.
+      </p>
+    </div>
+  </div>
+  <script src="warning.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F4F7FB</color>
+    <color name="card">#FFFFFF</color>
+    <color name="border">#E2E8F0</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_muted">#64748B</color>
+    <color name="accent">#0284C7</color>
+    <color name="accent_dark">#075985</color>
+
+    <color name="safe">#16A34A</color>
+    <color name="moderate">#CA8A04</color>
+    <color name="suspicious">#EA580C</color>
+    <color name="dangerous">#DC2626</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="scrim">#B3000000</color>
+</resources>

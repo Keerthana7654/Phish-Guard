@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: phishguard-backend
+
+  # ---- Default profile runs on an in-memory H2 DB so the backend starts with
+  # ---- zero setup. Switch to the "mysql" profile (see application-mysql.yml)
+  # ---- for a real deployment.
+  datasource:
+    url: jdbc:h2:mem:phishguard;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: 8009
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+phishguard:
+  jwt:
+    # CHANGE THIS in production — override via env var PHISHGUARD_JWT_SECRET.
+    secret: ${PHISHGUARD_JWT_SECRET:change-this-super-secret-key-min-32-bytes-long-please}
+    access-token-expiry-ms: 3600000      # 1 hour
+    refresh-token-expiry-ms: 604800000   # 7 days
+
+  cors:
+    allowed-origins: "http://localhost:5173,chrome-extension://*"
+
+  scoring:
+    warn-threshold: 51
+    block-threshold: 76
+
+  # All external threat-intel keys are OPTIONAL. Any check whose key is blank
+  # is skipped automatically and does not contribute to the score — the app
+  # runs fully functional on local heuristics alone with no keys configured.
+  threat-intel:
+    google-safe-browsing:
+      api-key: ${SAFE_BROWSING_API_KEY:}
+      url: https://safebrowsing.googleapis.com/v4/threatMatches:find
+    virustotal:
+      api-key: ${VIRUSTOTAL_API_KEY:}
+      url: https://www.virustotal.com/api/v3/urls
+    abuseipdb:
+      api-key: ${ABUSEIPDB_API_KEY:}
+      url: https://api.abuseipdb.com/api/v2/check
+    whois:
+      api-key: ${WHOIS_API_KEY:}
+      url: https://www.whoisxmlapi.com/whoisserver/WhoisService
+
+logging:
+  level:
+    com.phishguard: INFO

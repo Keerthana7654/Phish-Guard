@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="accent">#0284C7</color>
+    <color name="accent_dark">#075985</color>
+    <color name="bg">#F4F7FB</color>
+    <color name="border">#E2E8F0</color>
+    <color name="card">#FFFFFF</color>
+    <color name="dangerous">#DC2626</color>
+    <color name="moderate">#CA8A04</color>
+    <color name="safe">#16A34A</color>
+    <color name="scrim">#B3000000</color>
+    <color name="suspicious">#EA580C</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">PhishGuard</string>
+    <string name="btn_analyze">Analyze</string>
+    <string name="btn_open_default_apps">Set as Default Browser</string>
+    <string name="btn_save_settings">Save</string>
+    <string name="default_browser_explainer">Set PhishGuard as your default browser to check links automatically when you tap them in WhatsApp, SMS, or Gmail — no need to share them here manually.</string>
+    <string name="error_empty_url">Enter or share a link first.</string>
+    <string name="error_network">Couldn\'t reach the backend. Check the URL below and make sure your phone is on the same network as the server.</string>
+    <string name="error_no_backend">Set your backend URL below first (Settings section).</string>
+    <string name="error_server">Server error (%1$d). Try again.</string>
+    <string name="footnote">On-device check only — this app calls the same PhishGuard backend the browser extension and dashboard use.</string>
+    <string name="gate_checking">Checking this link…</string>
+    <string name="gate_continue_anyway">Continue Anyway</string>
+    <string name="gate_go_back">Go Back</string>
+    <string name="hint_backend">Backend URL — e.g. http://192.168.1.5:8009</string>
+    <string name="hint_url">Paste a link, or share one from Messages / WhatsApp…</string>
+    <string name="loading">Checking this link…</string>
+    <string name="settings_saved">Backend URL saved</string>
+    <string name="tagline">Paste or share a link to check it for phishing</string>
+    <style name="Theme.PhishGuard" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryDark">@color/accent_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/bg</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="m">true</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+    </style>
+    <style name="Theme.PhishGuard.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/scrim</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+</resources>

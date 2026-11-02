@@ -1,0 +1,46 @@
+:root {
+  --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --accent: #38bdf8;
+}
+body.dark {
+  --bg: #0b1120; --card: #131c31; --text: #e2e8f0; --muted: #94a3b8; --border: #1e293b; --accent: #38bdf8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
+h1 { font-size: 22px; margin-bottom: 20px; }
+.panel {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px 20px; margin-bottom: 16px;
+}
+.panel h2 { margin: 0 0 12px; font-size: 15px; }
+.hint { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 0 0 14px; }
+.hint code { background: var(--border); padding: 1px 5px; border-radius: 4px; }
+.row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; font-size: 13px;
+}
+.row.column { flex-direction: column; align-items: stretch; gap: 6px; }
+.row input[type="text"] {
+  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 13px;
+}
+.row input[type="range"] { width: 100%; }
+.chip-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-list li {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+  padding: 6px 10px; font-size: 12px; display: flex; align-items: center; gap: 6px;
+}
+.chip-list button {
+  border: none; background: none; color: #dc2626; cursor: pointer; font-weight: 700;
+}
+.chip-empty { color: var(--muted); font-size: 12px; }
+.btn {
+  padding: 10px 16px; border-radius: 10px; border: none; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.btn-primary { background: #38bdf8; color: #0f172a; }
+.btn-danger { background: #dc2626; color: #fff; }
+.save-row { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+.saved-msg { font-size: 12px; color: #16a34a; }

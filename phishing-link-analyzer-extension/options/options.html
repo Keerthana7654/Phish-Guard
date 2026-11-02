@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>PhishGuard Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>⚙️ PhishGuard Settings</h1>
+
+    <section class="panel">
+      <h2>General</h2>
+      <label class="row">
+        <span>Enable real-time link scanning</span>
+        <input type="checkbox" id="enabled" />
+      </label>
+      <label class="row">
+        <span>Dark mode</span>
+        <input type="checkbox" id="darkMode" />
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2>Backend (optional)</h2>
+      <p class="hint">
+        Leave blank to use PhishGuard's built-in local detection engine only.
+        Point this at your Spring Boot analysis service (e.g.
+        <code>http://localhost:8009</code>) to enable WHOIS, Safe Browsing,
+        VirusTotal and other server-side checks. The extension automatically
+        falls back to local detection if the backend is unreachable.
+      </p>
+      <label class="row column">
+        <span>Backend base URL</span>
+        <input type="text" id="backendUrl" placeholder="http://localhost:8009" />
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2>Thresholds</h2>
+      <label class="row column">
+        <span>Warn threshold (score ≥ this shows a warning): <b id="warnVal"></b></span>
+        <input type="range" id="warnThreshold" min="0" max="100" />
+      </label>
+      <label class="row column">
+        <span>Block threshold (score ≥ this blocks by default): <b id="blockVal"></b></span>
+        <input type="range" id="blockThreshold" min="0" max="100" />
+      </label>
+    </section>
+
+    <section class="panel">
+      <h2>Trusted domains (whitelist)</h2>
+      <p class="hint">Domains you chose "Continue Anyway" for won't be re-warned.</p>
+      <ul id="whitelist" class="chip-list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Data</h2>
+      <button id="clearHistory" class="btn btn-danger">Clear scan history</button>
+    </section>
+
+    <div class="save-row">
+      <span id="savedMsg" class="saved-msg"></span>
+      <button id="save" class="btn btn-primary">Save Settings</button>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

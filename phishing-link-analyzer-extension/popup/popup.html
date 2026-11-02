@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>PhishGuard</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <img src="../icons/icon48.png" width="24" height="24" alt="" />
+        <span>PhishGuard</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enabledToggle" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <section class="current-site" id="currentSiteSection">
+      <div class="score-ring" id="scoreRing">--</div>
+      <div class="current-site-info">
+        <p class="current-domain" id="currentDomain">Loading…</p>
+        <p class="current-level" id="currentLevel"></p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span class="stat-num" id="statTotal">0</span>
+        <span class="stat-label">Total scans</span>
+      </div>
+      <div class="stat-card danger">
+        <span class="stat-num" id="statDangerous">0</span>
+        <span class="stat-label">Dangerous</span>
+      </div>
+      <div class="stat-card warn">
+        <span class="stat-num" id="statSuspicious">0</span>
+        <span class="stat-label">Suspicious</span>
+      </div>
+      <div class="stat-card safe">
+        <span class="stat-num" id="statSafe">0</span>
+        <span class="stat-label">Safe</span>
+      </div>
+    </section>
+
+    <section class="history">
+      <div class="history-header">
+        <h3>Recent scans</h3>
+        <button id="clearHistoryBtn" class="link-btn">Clear</button>
+      </div>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <button id="darkModeToggle" class="footer-btn">🌙 Dark mode</button>
+      <button id="openOptionsBtn" class="footer-btn">⚙️ Settings</button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
